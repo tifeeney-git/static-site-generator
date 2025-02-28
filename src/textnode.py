@@ -5,7 +5,7 @@ class TextType(Enum):
     BOLD = 'bold'
     ITALIC = 'italic'
     CODE = 'code'
-    LINKS = 'link'
+    LINK = 'link'
     IMAGE = 'image'
 
 class TextNode():
@@ -34,8 +34,10 @@ def text_node_to_html_node(text_node):
             return LeafNode('i', text_node.text)
         case TextType.CODE:
             return LeafNode('code', text_node.text)
-        case TextType.LINKS:
+        case TextType.LINK:
             return LeafNode("a", text_node.text, {"href": text_node.url})
         case TextType.IMAGE:
             return LeafNode("img", "", {"src": text_node.url, "alt": text_node.text})
     raise ValueError(f"invalid text type: {text_node.text_type}")
+
+  
