@@ -1,1 +1,1 @@
-python3 src/main.py "/tifeeney-github-io/"
+python3 src/main.py "/static-site-generator/"
